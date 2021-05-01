@@ -31,7 +31,7 @@ async def get_by_id(blog_id:int):
     return JSONResponse(content=json_compatible_item_data)
 
 @app.put("/items/{id}")
-def update_item(id: str, item: Item):
+async def update_item(id: str, item: Item):
     json_compatible_item_data = jsonable_encoder(item)
     return JSONResponse(content=json_compatible_item_data)
 
